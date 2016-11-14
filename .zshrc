@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm brew zsh-syntax-higlighting autojump)
+plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,8 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # AutoJump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 # Syntax
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -98,14 +97,11 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 
 # Alias
-alias cl='clear'
 alias v='vim'
+alias g='git'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
-alias jp='j --purge'
+alias cl='clear'
 
-alias npmls='npm ls -g --depth=0'
-
-alias htn='how-to-npm'
-alias htnv="how-to-npm verify"
+alias npmls="npm ls -g --depth=0"

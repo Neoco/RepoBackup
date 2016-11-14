@@ -12,7 +12,6 @@ set laststatus=2
 set showmode
 set showcmd
 set wildmenu
-set listchars=tab:▸\ ,eol:¬
 
 " ----------  Render  ----------
 set lazyredraw
@@ -27,8 +26,8 @@ set fileencodings=utf-8
 " ---- Backup & swap & undo ----
 set undodir=~/.vim/.undo//
 set undofile                " Save undo's after file closes
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
+set undolevels=100         " How many undos
+set undoreload=1000        " number of lines to save for undo
 set nobackup
 set nowritebackup
 set noswapfile
@@ -40,9 +39,9 @@ set t_vb=
 
 " ----------  Editing ----------
 set wrap " Line break
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set shiftround
 set expandtab
 set smarttab
@@ -78,6 +77,10 @@ nnoremap k gk
 nnoremap ; :
 nnoremap : ;
 
+" Buffer
+nnoremap <C-n> :bn!<cr>
+nnoremap <C-p> :bp!<cr>
+
 " ----------  Plugin  ----------
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -103,6 +106,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 
+Plugin 'darfink/vim-plist'
+
 call vundle#end()
 filetype plugin indent on
 filetype plugin on
@@ -119,14 +124,14 @@ let g:airline_section_b='Neoco'
 set t_Co=256
 syntax enable
 set background=dark
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='soft'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='medium'
 colorscheme gruvbox
 
 " ----------Easymotion----------
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap <Leader>f <Plug>(easymotion-overwin-f2)
 nmap / <Plug>(easymotion-sn)
 xmap / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-sn)
@@ -192,14 +197,16 @@ let g:user_emmet_leader_key = '<C-z>'
 let g:user_emmet_mode='inv'
 
 " ---------- SuperTab ----------
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabContextDefaultCompletionType = '<c-p>'
+let g:SuperTabDefaultCompletionType = '<c-p>'
+" let g:SuperTabDefaultCompletionType = 'context'
+" let g:SuperTabContextDefaultCompletionType = '<c-p>'
 let g:SuperTabRetainCompletionDuration = 'completion'
 let g:SuperTabMappingForward = '<tab>'
 let g:SuperTabMappingBackward = '<s-tab>'
 set completeopt-=preview
 inoremap <c-o> <c-x><c-o>
 inoremap <c-l> <c-x><c-l>
+inoremap <c-f> <c-x><c-f>
 inoremap <c-v> <c-x><c-v>
 let g:SuperTabCrMapping = 1
 
