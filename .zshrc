@@ -105,3 +105,5 @@ alias sz='source ~/.zshrc'
 alias cl='clear'
 
 alias npmls="npm ls -g --depth=0"
+
+alias g11="g++ -std=c++11"
